@@ -1,9 +1,3 @@
-### Dependencies
-- Pillow https://pillow.readthedocs.io/en/stable/
-- Python 3.7.3
-
-### Command
-```bash
-python3 main.py {text} {path_to_gif}
-```
-Script will create new gif to path `result/result.gif`
+.vscode/
+__pycache__
+result.gif
