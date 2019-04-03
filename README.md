@@ -1,4 +1,4 @@
-## Dependencies### Dependencies
+## Dependencies
 - Python 3.7.3
 - Pillow https://pillow.readthedocs.io/en/stable/
 - argparse https://docs.python.org/3/library/argparse.html#module-argparse
