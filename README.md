@@ -1,3 +1,5 @@
+![Super Gif](wow.gif)
+
 ## Dependencies
 - Python 3.7.3
 - Pillow https://pillow.readthedocs.io/en/stable/
