@@ -18,7 +18,7 @@ parser.add_argument('-r', '--result', type=str, help='Path for result gif', defa
 
 def main():
     args = parser.parse_args()
-    gif_text = args.text
+    gif_text = args.text.upper()
     gif_path = path.abspath(args.source)
     font_path = args.font
     result_path = args.result
@@ -30,9 +30,19 @@ def main():
             gif_frames.append(frame.convert("RGBA"))
 
     text_mask_img = create_text_mask(gif_text, gif_size, font_path)
+    text_size = text_mask_img.size
+    paste_coords_y = int((gif_size[1] - text_size[1]) / 2)
 
-    for gif_frame in gif_frames:
-        gif_frame.paste(text_mask_img, (0, 0), text_mask_img)
+    for idx, gif_frame in enumerate(gif_frames):
+        gif_frame.paste(text_mask_img, (0, paste_coords_y), text_mask_img)
+        coords = (
+            0,
+            paste_coords_y,
+            gif_size[0],
+            paste_coords_y + text_size[1]
+
+        )
+        gif_frames[idx] = gif_frame.crop(coords)
     
     gif_frames[0].save(
         result_path,
