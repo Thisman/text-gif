@@ -24,7 +24,7 @@ optional arguments:
 ##### For quick result you cun run
 
 ```bash
-python3 main.py -t "HELLO" -s ./example.gif
+python3 main.py -t "HELLO" -s ./gifs/tunnel.gif
 ```
 
 ### TODO
